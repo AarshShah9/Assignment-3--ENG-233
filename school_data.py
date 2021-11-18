@@ -105,12 +105,9 @@ def main():
 # Do not modify the code below
 if __name__ == '__main__':
     main()
-<<<<<<< HEAD
 
 
 
 # for i in school_data2019:
     #if school_data2019[:0] = requested_school:
         # a = 
-=======
->>>>>>> 473d41ca3847fa26ecd95cefe8e4872f43775154
