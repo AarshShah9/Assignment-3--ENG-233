@@ -124,17 +124,46 @@ def main():
     print(
         f'Mean enrollment for Grade 12: {int((data[6][0] + data[7][0] + data[8][0])//3)}')
     print(
-        f'''Total number of students graduated in past 3 years: {int(data[0][0] + data[1][0] + 
-        data[2][0] + data[3][0] + data[4][0] + data[5][0] + data[6][0] + data[7][0] + data[8][0])}''')
+        f'Total number of students graduated in past 3 years: {int(data[6][0] + data[7][0] + data[8][0])}')
 
     grades = [10, 11, 12]
-    plt.plot(grades, [1, 2, 3], label='2021 Enrollment')
-    plt.plot(grades, [2, 4, 5], label='2020 Enrollment')
-    plt.plot(grades, [1, 6, 4], label='2019 Enrollment')
+    plt.plot(grades, [data[0][0], data[3][0], data[6][0]],
+             'bo', label='2021 Enrollment')
+    plt.plot(grades, [data[1][0], data[4][0], data[7][0]],
+             'go', label='2020 Enrollment')
+    plt.plot(grades, [data[2][0], data[5][0], data[8][0]],
+             'ro', label='2019 Enrollment')
     plt.legend()
     plt.title('Grade Enrollment by Year')
     plt.xlabel('Grade Level')
     plt.ylabel('Number of Students')
+
+    # Gets the current locations and labels.
+    # locs, labels = plt.xticks()
+    # plt.xticks([0, 10, 20], grades)
+    plt.show()
+
+    year = [2019, 2020, 2021]
+    plt.subplot(3, 1, 1)
+    plt.plot(year, [data[2][0], data[1][0], data[0][0]],
+             'y--', label='Grade 10')
+    plt.ylabel('Number of Students')
+    plt.legend()
+    plt.title('Enrollment by Grade')
+
+    plt.subplot(3, 1, 2)
+    plt.plot(year, [data[5][0], data[4][0], data[3][0]],
+             'm--', label='Grade 11')
+    plt.ylabel('Number of Students')
+    plt.legend()
+
+    plt.subplot(3, 1, 3)
+    plt.plot(year, [data[8][0], data[7][0], data[6][0]],
+             'c--', label='Grade 11')
+    plt.xlabel('Enrollment Year')
+    plt.ylabel('Number of Students')
+    plt.legend()
+
     plt.show()
 
 
