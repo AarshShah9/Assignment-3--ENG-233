@@ -60,10 +60,12 @@ schools = {'1224': 'Centennial High School',
            '9865': 'Lester B. Pearson High School'
            }
 
-schoolslist = list(schools.keys())
-
+school_number = list(schools.keys())
+school_name = list(schools.values())
 
 # Add your code within the main function. A docstring is not required for this function.
+
+
 def main():
     print("ENDG 233 School Enrollment Statistics\n")
 
@@ -81,33 +83,42 @@ def main():
     print(f'Array Data for 2018 - 2019:\n{data_2019}')
 
     # Add request for user input here
-    requested_school = str(input(
-        'Please enter the high school name or school code: '))
 
-    # if requested_school in str(schools.keys()) or (schools.values()):
-    #     print('yes')
-    # else:
-    #     print('nah')
-    chosen_school = '1224'
+    valid = True
+    while valid == True:
+        requested_school = str(input(
+            'Please enter the high school name or school code: '))
+        if requested_school in schools.values():
+            chosen_school_code = school_number[school_name.index(
+                requested_school)]
+            valid = False
+        elif requested_school in school_number:
+            chosen_school_code = requested_school
+            valid = False
+        else:
+            print('You must enter a valid school name or code.')
 
     print("\n***Requested School Statistics***\n")
 
     # Print school name and code using the given class
-    school1 = School(schools.get(chosen_school), chosen_school)
-    print(school1.print_all_stats())
-    # Add data processing and plotting here
+    school_1 = School(schools.get(chosen_school_code), chosen_school_code)
+    print(school_1.print_all_stats())
 
+    # Add data processing and plotting here
+    print(data_2021[0:1][0:1])
+
+    position_2021 = np.argwhere(data_2021 == int(chosen_school_code))
+    a = data_2021[position_2021]
+    print(a)
+
+
+    # print(position_2021)
+    # for i in data_2021, data_2020, data_2019:
+    #     if i == chosen_school:
+    # a =
     # print(f'Mean enrollment for Grade 10:' + ({data_2021[0][1]} + {data_2020[]}
     # print(f'Mean enrollment for Grade 11: {}')
     # print(f'Mean enrollment for Grade 12: {}')
-
-
-# Do not modify the code below
+    # Do not modify the code below
 if __name__ == '__main__':
     main()
-
-
-
-# for i in school_data2019:
-    #if school_data2019[:0] = requested_school:
-        # a = 
