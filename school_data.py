@@ -102,7 +102,7 @@ def main():
 
     # Print school name and code using the given class
     school_1 = School(schools.get(chosen_school_code), chosen_school_code)
-    print(school_1.print_all_stats())
+    school_1.print_all_stats()
 
     # Add data processing and plotting here
     data = []
@@ -113,15 +113,29 @@ def main():
         for year in range(0, 3):
             position = np.where(list_data[year] == int(chosen_school_code))
             (x, y) = (position[0], position[1])
-            v = list_data[year][x, y + iteration]
-            data.append(v)
+            enrollment = list_data[year][x, y + iteration]
+            data.append(enrollment)
         iteration += 1
 
-    print(data)
+    print(
+        f'Mean enrollment for Grade 10: {int((data[0][0] + data[1][0] + data[2][0])//3)}')
+    print(
+        f'Mean enrollment for Grade 11: {int((data[3][0] + data[4][0] + data[5][0])//3)}')
+    print(
+        f'Mean enrollment for Grade 12: {int((data[6][0] + data[7][0] + data[8][0])//3)}')
+    print(
+        f'''Total number of students graduated in past 3 years: {int(data[0][0] + data[1][0] + 
+        data[2][0] + data[3][0] + data[4][0] + data[5][0] + data[6][0] + data[7][0] + data[8][0])}''')
 
-    print(f'Mean enrollment for Grade 10: {(data[0] + data[1] + data[2])//3}')
-    # print(f'Mean enrollment for Grade 11: {}')
-    # print(f'Mean enrollment for Grade 12: {}')
+    grades = [10, 11, 12]
+    plt.plot(grades, [1, 2, 3], label='2021 Enrollment')
+    plt.plot(grades, [2, 4, 5], label='2020 Enrollment')
+    plt.plot(grades, [1, 6, 4], label='2019 Enrollment')
+    plt.legend()
+    plt.title('Grade Enrollment by Year')
+    plt.xlabel('Grade Level')
+    plt.ylabel('Number of Students')
+    plt.show()
 
 
 # Do not modify the code below
