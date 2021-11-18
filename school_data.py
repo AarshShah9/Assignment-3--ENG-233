@@ -139,8 +139,7 @@ def main():
     plt.ylabel('Number of Students')
 
     # Gets the current locations and labels.
-    # locs, labels = plt.xticks()
-    # plt.xticks([0, 10, 20], grades)
+    plt.xticks(grades, grades)
     plt.show()
 
     year = [2019, 2020, 2021]
@@ -150,12 +149,14 @@ def main():
     plt.ylabel('Number of Students')
     plt.legend()
     plt.title('Enrollment by Grade')
+    plt.xticks(year, year)
 
     plt.subplot(3, 1, 2)
     plt.plot(year, [data[5][0], data[4][0], data[3][0]],
              'm--', label='Grade 11')
     plt.ylabel('Number of Students')
     plt.legend()
+    plt.xticks(year, year)
 
     plt.subplot(3, 1, 3)
     plt.plot(year, [data[8][0], data[7][0], data[6][0]],
@@ -163,6 +164,7 @@ def main():
     plt.xlabel('Enrollment Year')
     plt.ylabel('Number of Students')
     plt.legend()
+    plt.xticks(year, year)
 
     plt.show()
 
