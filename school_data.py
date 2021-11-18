@@ -105,20 +105,25 @@ def main():
     print(school_1.print_all_stats())
 
     # Add data processing and plotting here
-    print(data_2021[0:1][0:1])
+    data = []
+    list_data = [data_2021, data_2020, data_2019]
 
-    position_2021 = np.argwhere(data_2021 == int(chosen_school_code))
-    a = data_2021[position_2021]
-    print(a)
+    iteration = 1
+    while iteration <= 3:
+        for year in range(0, 3):
+            position = np.where(list_data[year] == int(chosen_school_code))
+            (x, y) = (position[0], position[1])
+            v = list_data[year][x, y + iteration]
+            data.append(v)
+        iteration += 1
 
+    print(data)
 
-    # print(position_2021)
-    # for i in data_2021, data_2020, data_2019:
-    #     if i == chosen_school:
-    # a =
-    # print(f'Mean enrollment for Grade 10:' + ({data_2021[0][1]} + {data_2020[]}
+    print(f'Mean enrollment for Grade 10: {(data[0] + data[1] + data[2])//3}')
     # print(f'Mean enrollment for Grade 11: {}')
     # print(f'Mean enrollment for Grade 12: {}')
-    # Do not modify the code below
+
+
+# Do not modify the code below
 if __name__ == '__main__':
     main()
