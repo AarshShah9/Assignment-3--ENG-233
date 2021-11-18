@@ -80,3 +80,8 @@ def main():
 if __name__ == '__main__':
     main()
 
+
+
+# for i in school_data2019:
+    #if school_data2019[:0] = requested_school:
+        # a = 
