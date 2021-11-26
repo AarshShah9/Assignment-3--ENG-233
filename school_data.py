@@ -38,8 +38,6 @@ class School:
 # Import data here
 # Hint: Create a dictionary for all school names and codes
 # Hint: Create a list of school codes to help with index look-up in arrays
-
-
 # Creates a dictionary for all school names and codes
 schools = {'1224': 'Centennial High School',
            '1679': 'Robert Thirsk School',
@@ -174,7 +172,7 @@ def main():
     plt.xlabel('Grade Level')
     plt.ylabel('Number of Students')
     # Makes the x-axis of the chart only have 3 values (grade 10, 11, 12).
-    plt.xticks(grades, grades)
+    plt.xticks(grades)
     # Prints the chart.
     plt.show()
 
@@ -191,7 +189,7 @@ def main():
     # Creates a legend using the yellow dashed line and label assigned in the plt.plot's
     plt.legend(loc='upper right')
     # Makes the x-axis of the chart only have 3 values (the years 2019, 2020, 2021).
-    plt.xticks(year, year)
+    plt.xticks(year)
 
     # Makes a subplot that spans the middle 1/3 of the chart.
     plt.subplot(3, 1, 2)
@@ -203,7 +201,7 @@ def main():
     # Creates a legend using the magenta dashed line and label assigned in the plt.plot's
     plt.legend(loc='upper right')
     # Makes the x-axis of the chart only have 3 values (the years 2019, 2020, 2021).
-    plt.xticks(year, year)
+    plt.xticks(year)
 
     # Makes a subplot that spans the bottom 1/3 of the chart.
     plt.subplot(3, 1, 3)
@@ -216,7 +214,7 @@ def main():
     # Creates a legend using the cyan dashed line and label assigned in the plt.plot's
     plt.legend(loc='upper right')
     # Makes the x-axis of the chart only have 3 values (the years 2019, 2020, 2021).
-    plt.xticks(year, year)
+    plt.xticks(year)
     # Prints the chart.
     plt.show()
 
