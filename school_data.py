@@ -70,7 +70,7 @@ school_name = list(schools.values())
 
 
 def main():
-    # Print Statement for the statistics title.
+    # Print statement for the statistics title.
     print("ENDG 233 School Enrollment Statistics\n")
 
     # Print array data here
@@ -207,7 +207,7 @@ def main():
     plt.subplot(3, 1, 3)
     # Plots the grade 12 enrollment data using a cyan dashed line chart over the 3 years.
     plt.plot(year, [data[8][0], data[7][0], data[6][0]],
-             'c--', label='Grade 11')
+             'c--', label='Grade 12')
     # Creates a x and y label for the chart.
     plt.xlabel('Enrollment Year')
     plt.ylabel('Number of Students')
